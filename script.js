@@ -14,22 +14,33 @@ document.addEventListener('DOMContentLoaded', function () {
         sectionObserver.observe(section);
     });
     
-    const skillBars = document.querySelectorAll('.skill-bar');
-    const skillObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const bar = entry.target;
-                const width = bar.dataset.width;
-                bar.style.width = width;
-                skillObserver.unobserve(bar);
-            }
-        });
-    }, { threshold: 0.8 });
+    /* ================= SKILL CARDS 3D TILT & MOUSE SPOTLIGHT ================= */
+    const skillCards = document.querySelectorAll('.skill-card');
 
-    skillBars.forEach(bar => {
-        bar.dataset.width = bar.style.width;
-        bar.style.width = '0';
-        skillObserver.observe(bar);
+    skillCards.forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Spotlight coordinates
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+
+            // 3D Tilt
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -12;
+            const rotateY = ((x - centerX) / centerX) * 12;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+            card.style.setProperty('--mouse-x', '-500px');
+            card.style.setProperty('--mouse-y', '-500px');
+        });
     });
 
 

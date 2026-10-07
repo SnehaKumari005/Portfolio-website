@@ -68,6 +68,10 @@
     <section id="home" class="page active hero">
     <div class="hero-container">
        <div class="hero-content">
+            <div class="hero-status-badge">
+                <span class="pulse-dot"></span>
+                <span>Open to Internships & Projects</span>
+            </div>
             <p class="hero-intro">Hello, I'm</p>
 
     <h1 class="hero-title gradient-text">Sneha Kumari</h1>
@@ -75,6 +79,9 @@
         <span id="typing-text"></span>
         <span class="cursor">|</span>
     </p>
+            <p class="hero-bio">
+                Passionate Computer Science student building responsive web applications and AI-driven solutions.
+            </p>
             <div class="hero-buttons">
                 <button class="Documents-btn" onclick="openResume()">
     <span class="folderContainer">
@@ -116,6 +123,10 @@
 
     <p class="text">Resume</p>
 </button>
+                <a href="#projects" class="hero-cta-btn nav-link">
+                    <span>View Projects</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
      </div>
         </div>
         <div class="hero-image">
@@ -130,7 +141,18 @@
                         <i class="fas fa-envelope"></i>
                     </a>
                 </div>
-            <img src="sneha.jpeg" alt="Sneha Kumari">
+            <div class="image-wrapper">
+                <div class="avatar-glow"></div>
+                <img src="sneha.jpeg" alt="Sneha Kumari">
+                <div class="floating-badge badge-top">
+                    <i class="fas fa-trophy"></i>
+                    <span>4x Hackathons</span>
+                </div>
+                <div class="floating-badge badge-bottom">
+                    <i class="fas fa-code"></i>
+                    <span>Web Developer</span>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -156,41 +178,81 @@
         <h2 class="section-title">Skills</h2>
         <div class="skills-grid">
             <div class="skill-card">
-                <img src="skills-icons/python.svg" alt="Python" class="skill-icon">
-                <h3>Python</h3>
-                <div class="skill-level"><div class="skill-bar" style="width: 85%"></div></div>
-            </div>
-            <div class="skill-card">
-                <img src="skills-icons/c.svg" alt="C" class="skill-icon">
-                <h3>C</h3>
-                <div class="skill-level"><div class="skill-bar" style="width: 75%"></div></div>
-            </div>
-            <div class="skill-card">
-                <img src="skills-icons/html.svg" alt="HTML" class="skill-icon">
-                <h3>HTML</h3>
-                <div class="skill-level"><div class="skill-bar" style="width: 90%"></div></div>
-            </div>
-            <div class="skill-card">
-                <img src="skills-icons/css.svg" alt="CSS" class="skill-icon">
-                <h3>CSS</h3>
-                <div class="skill-level"><div class="skill-bar" style="width: 85%"></div></div>
-            </div>
-            <div class="skill-card">
-                <img src="skills-icons/javascript.svg" alt="JavaScript" class="skill-icon">
-                <h3>JavaScript</h3>
-                <div class="skill-level"><div class="skill-bar" style="width: 60%"></div></div>
-            </div>
-            <div class="skill-card">
-                <img src="skills-icons/cpp.svg" alt="C++" class="skill-icon">
-                <h3>C++</h3>
-                <div class="skill-level">
-                    <div class="skill-bar" style="width: 70%"></div>
+                <div class="skill-card-inner">
+                    <img src="skills-icons/python.svg" alt="Python" class="skill-icon">
+                    <h3>Python</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">OOP & Scripting</span>
+                    </div>
+                    <span class="skill-badge-level">Proficient</span>
                 </div>
             </div>
             <div class="skill-card">
-                <img src="skills-icons/excel.svg" alt="Microsoft Excel" class="skill-icon">
-                <h3>Microsoft Excel</h3>
-                <div class="skill-level"><div class="skill-bar" style="width: 80%"></div></div>
+                <div class="skill-card-inner">
+                    <img src="skills-icons/c.svg" alt="C" class="skill-icon">
+                    <h3>C</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Data Structures</span>
+                        <span class="skill-tag">Core Fundamentals</span>
+                    </div>
+                    <span class="skill-badge-level">Proficient</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-inner">
+                    <img src="skills-icons/html.svg" alt="HTML" class="skill-icon">
+                    <h3>HTML</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Semantic Markup</span>
+                        <span class="skill-tag">Web Standards</span>
+                    </div>
+                    <span class="skill-badge-level">Advanced</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-inner">
+                    <img src="skills-icons/css.svg" alt="CSS" class="skill-icon">
+                    <h3>CSS</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Responsive Design</span>
+                        <span class="skill-tag">Modern Flex & Grid</span>
+                    </div>
+                    <span class="skill-badge-level">Advanced</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-inner">
+                    <img src="skills-icons/javascript.svg" alt="JavaScript" class="skill-icon">
+                    <h3>JavaScript</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">DOM Manipulation</span>
+                        <span class="skill-tag">ES6+ & Web APIs</span>
+                    </div>
+                    <span class="skill-badge-level">Intermediate</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-inner">
+                    <img src="skills-icons/cpp.svg" alt="C++" class="skill-icon">
+                    <h3>C++</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">STL & Algorithms</span>
+                        <span class="skill-tag">Competitive Coding</span>
+                    </div>
+                    <span class="skill-badge-level">Proficient</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-card-inner">
+                    <img src="skills-icons/excel.svg" alt="Microsoft Excel" class="skill-icon">
+                    <h3>Microsoft Excel</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Data Analysis</span>
+                        <span class="skill-tag">Formulas & Pivot</span>
+                    </div>
+                    <span class="skill-badge-level">Proficient</span>
+                </div>
             </div>
         </div>
     </section>
