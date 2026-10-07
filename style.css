@@ -197,6 +197,9 @@ body {
     overflow-x: hidden;
     transition: all 0.4s ease;
     font-weight: 100;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 body.light-theme {
@@ -308,6 +311,7 @@ section {
 .section {
     padding: 100px 20px;
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     position: relative;
     z-index: 1;
@@ -902,7 +906,8 @@ section {
 }
 
 .footer {
-    margin-top: 0;       /* ✅ New Code */
+    margin-top: auto;
+    width: 100%;
     padding: 15px 0;
     background: linear-gradient(135deg, #1e1e2e, #3a3a5a, #5c5c8a);
     text-align: center;
@@ -913,7 +918,7 @@ section {
 .footer-content p {
     font-size: 14px;
     color: #ffffff;
-    margin-bottom: 20px;
+    margin: 0;
     width: 100%;
 }
 
